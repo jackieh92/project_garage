@@ -18,14 +18,15 @@ class Garage():
         print("Welcome, here is your ticket")
         for ticket in self.tickets:
             print(ticket)
-        self.tickets -=1 
-        self.parkingSpaces -=1
+            self.tickets.remove(ticket) 
+            self.parkingSpaces.remove(ticket)
 
 # aa
 
     # Method payForParking, where customer pays for parking
-    def payForParking(self, time, paid):
+    def payForParking(self):
         time = int(input("How many hours will you park here?"))
+        paid = time * 1
         self.currentTicket[paid] = time
         while True:
             if self.paid == 0:
@@ -37,14 +38,14 @@ class Garage():
     # Method leaveGarage, where customer leaves
     def leaveGarage(self):
         while True:
-            if self.paid == 0:
+            if self.currentTicket == 0:
                 input(f"Please pay {self.time}")
                 del self.currentTicket[paid]
             else:
                 print("Thank you, have a nice day")
                 break
-        self.tickets +=1 
-        self.parkingSpaces +=1
+        self.tickets.append(self.currentTicket)
+        self.parkingSpaces.append(self.currentTicket)
 
 # jh
 
@@ -56,11 +57,9 @@ def run():
         if response.lower() == "park":
             soCheesyGarage.takeTicket()
         if response.lower() == "pay":
-            soCheesyGarage().payForParking()
+            soCheesyGarage.payForParking()
         if response.lower() == 'leave':
-            soCheesyGarage().leaveGarage
+            soCheesyGarage.leaveGarage()
             break
 
-
 run()
-
