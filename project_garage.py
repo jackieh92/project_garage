@@ -30,8 +30,7 @@ class Garage():
         while True:
             if self.paid == 0:
                 print(f"You owe {self.paid} when you leave")
-            elif:
-                self.paid != 0:
+            elif self.paid != 0:
                 print("Your ticket has been paid. You have 15 minutes to leave")
                 self.paid == True
 
@@ -48,7 +47,7 @@ class Garage():
         self.parkingSpaces +=1
 
 # jh
-def run()
+def run():
     soCheesyGarage = Garage([],[],{})
     while True:
         response = input("what would you like to do? Your options are park, pay or leave")
