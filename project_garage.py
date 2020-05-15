@@ -47,6 +47,8 @@ class Garage():
         self.parkingSpaces +=1
 
 # jh
+
+# Method that instantiates Garage class
 def run():
     soCheesyGarage = Garage([],[],{})
     while True:
