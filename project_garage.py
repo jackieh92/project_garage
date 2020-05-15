@@ -22,28 +22,26 @@ class Garage():
 
     # Method payForParking, where customer pays for parking
     def payForParking(self):
-        time = int(input("\n* For how many hours?\n"))
-        cost = 2 * time
-        self.currentTicket[cost] = time
-        while True:
-            if not cost:
-                print(f"\n* You owe {time} hours\n")
-            elif cost != 0:
-                print("\n* Your ticket has been paid. You have 15 minutes to leave\n")
-                cost == True
-                break
+        paid = int(input("\n* For how many hours?\n"))
+        cost = 2 * paid
+        self.currentTicket[paid] = cost
+        if cost > 0:
+            print(f"\n* You owe ${cost} \n")
+        elif cost == 0:
+            print("\n* Your ticket has been paid. You have 15 minutes to leave\n")
+            paid == True
+                
 
     # Method leaveGarage, where customer leaves
     def leaveGarage(self):
-        while True:
-            if self.currentTicket == 0:
-                input(f"\n* Please pay {self.time}.\n")
-                del self.currentTicket[paid]
-            else:
-                print("\n* Thank you, have a nice day!\n")
-                break
-        self.tickets.append(self.currentTicket)
-        self.parkingSpaces.append(self.currentTicket)
+        if bool(self.currentTicket):
+            paid = int(input("\n* For how many hours?\n"))
+            cost = 2 * paid
+            input(f"\n* Please enter the word 'pay' to pay ${cost}\n")
+        else:
+            print("\n* Thank you, have a nice day!\n")
+        self.tickets.append(1)
+        self.parkingSpaces.append(1)
 
 # jh
 
