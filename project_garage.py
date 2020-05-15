@@ -47,6 +47,19 @@ class Garage():
         self.tickets +=1 
         self.parkingSpaces +=1
 
-# This should update the "currentTicket" dictionary key "paid" to True
+# jh
+def run()
+    soCheesyGarage = Garage([],[],{})
+    while True:
+        response = input("what would you like to do? Your options are park, pay or leave")
+        if response.lower() == "park":
+            soCheesyGarage.takeTicket()
+        if response.lower() == "pay":
+            soCheesyGarage().payForParking()
+        if response.lower() == 'leave':
+            soCheesyGarage().leaveGarage
+            break
 
+
+run()
 
