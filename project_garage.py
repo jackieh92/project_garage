@@ -30,8 +30,7 @@ class Garage():
         while True:
             if self.paid == 0:
                 print(f"You owe {self.paid} when you leave")
-            elif:
-                self.paid != 0:
+            elif self.paid != 0:
                 print("Your ticket has been paid. You have 15 minutes to leave")
                 self.paid == True
 
@@ -47,6 +46,21 @@ class Garage():
         self.tickets +=1 
         self.parkingSpaces +=1
 
-# This should update the "currentTicket" dictionary key "paid" to True
+# jh
 
+# Method that instantiates Garage class
+def run():
+    soCheesyGarage = Garage([],[],{})
+    while True:
+        response = input("what would you like to do? Your options are park, pay or leave")
+        if response.lower() == "park":
+            soCheesyGarage.takeTicket()
+        if response.lower() == "pay":
+            soCheesyGarage().payForParking()
+        if response.lower() == 'leave':
+            soCheesyGarage().leaveGarage
+            break
+
+
+run()
 
