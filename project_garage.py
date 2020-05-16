@@ -27,17 +27,24 @@ class Garage():
         self.currentTicket[paid] = cost
         if cost > 0:
             print(f"\n* You owe ${cost} \n")
-        elif cost == 0:
-            print("\n* Your ticket has been paid. You have 15 minutes to leave\n")
-            paid == True
-                
+            payment = input(f"\n* Please enter promocode 'pay' to pay ${cost}\n")
+            if payment == 'pay':
+                print("\n* Your ticket has been paid. You have 15 minutes to leave\n")
+                print("\n* Have a nice day!\n")
+            elif cost == 0:
+                print("\n* Your ticket has been paid. You have 15 minutes to leave\n")
+                print("\n* Have a nice day!\n")
+                paid == True
 
     # Method leaveGarage, where customer leaves
     def leaveGarage(self):
-        if bool(self.currentTicket):
-            paid = int(input("\n* For how many hours?\n"))
+        if not bool(self.currentTicket):
+            paid = int(input("\n* How many hours did you park for?\n"))
             cost = 2 * paid
-            input(f"\n* Please enter the word 'pay' to pay ${cost}\n")
+            payment = input(f"\n* Please enter promocode 'pay' to pay ${cost}\n")
+            if payment == 'pay':
+                print("\n* Your ticket has been paid. You have 15 minutes to leave\n")
+                print("\n* Have a nice day!\n")
         else:
             print("\n* Thank you, have a nice day!\n")
         self.tickets.append(1)
@@ -54,6 +61,7 @@ def run():
             soCheesyGarage.takeTicket()
         if response.lower() == "pay":
             soCheesyGarage.payForParking()
+            break
         if response.lower() == 'leave':
             soCheesyGarage.leaveGarage()
             break
